@@ -1,80 +1,33 @@
-# 🎭 Facial Emotion Recognition using AlexNet
+# Facial Emotion Recognition using AlexNet
 
-A real-time **Facial Emotion Recognition** web application built using **PyTorch**, **Flask**, and **OpenCV**. The system uses an **AlexNet-based Convolutional Neural Network** trained on the **FER2013** dataset to classify facial expressions into seven emotion categories.
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.13-blue?logo=python">
-  <img src="https://img.shields.io/badge/PyTorch-Deep%20Learning-red?logo=pytorch">
-  <img src="https://img.shields.io/badge/Flask-Web%20App-black?logo=flask">
-  <img src="https://img.shields.io/badge/OpenCV-Computer%20Vision-green?logo=opencv">
-</p>
+A real-time facial emotion recognition web application built using PyTorch, Flask, and OpenCV. The system uses an AlexNet-based convolutional neural network trained on the FER2013 dataset to classify facial expressions into seven emotion categories.
 
 ---
 
-## 📄 Project Resources
+## Overview
 
-- 📑 **Project Presentation:** [View Presentation](file:///C:/Users/Sowmya/Desktop/AffectNet%20Paper-Categorical%20model.pdf)
-
-## 📌 Features
-
-- 🎥 Real-time webcam emotion detection
-- 😊 Detects **7 facial emotions**
-- 🧠 AlexNet implemented from scratch in PyTorch
-- 🌐 Browser-based interface using Flask
-- 📦 Simple and lightweight interface
-- 📊 Displays predicted emotion with confidence score
-- 🟦 Face detection with bounding box
+This project implements a facial emotion classification pipeline from scratch, covering model architecture, training, and deployment through a browser-based interface. It supports real-time webcam-based detection with bounding-box face localization and confidence-scored predictions.
 
 ---
 
-## 😊 Supported Emotions
+## Project Resources
 
-- Angry 😠
-- Disgust 🤢
-- Fear 😨
-- Happy 😀
-- Neutral 😐
-- Sad 😢
-- Surprise 😲
+- Project Presentation: *AffectNet Paper – Categorical Model* (see file named - "presentation")
 
 ---
 
-## 🏗️ Model Architecture
+## Features
 
-The model is based on **AlexNet** and consists of:
-
-- 5 Convolutional Layers
-- ReLU Activations
-- Max Pooling Layers
-- Dropout Regularization
-- 3 Fully Connected Layers
-- Softmax Prediction (during inference)
-
-Input Image:
-
-- RGB
-- 227 × 227
-
-Loss Function:
-
-- Cross Entropy Loss
-
-Optimizer:
-
-- SGD
-- Learning Rate = 0.01
-- Momentum = 0.9
-- Weight Decay = 0.0005
+- Real-time webcam emotion detection
+- Classification across seven facial emotion categories
+- AlexNet architecture implemented from scratch in PyTorch
+- Browser-based interface built with Flask
+- Confidence score displayed alongside predicted emotion
+- Face detection with bounding-box overlay
 
 ---
 
-## 📂 Dataset
-
-Dataset used:
-
-**FER2013**
-
-Classes:
+## Supported Emotions
 
 - Angry
 - Disgust
@@ -86,38 +39,77 @@ Classes:
 
 ---
 
-## 📈 Results
+## Model Architecture
 
-| Metric | Value |
-|--------|------:|
-| Top-1 Accuracy | **62.76%** |
-| Top-2 Accuracy | **80.64%** |
-| Weighted F1 Score | **0.62** |
-| ROC AUC | **0.90** |
+The model is based on AlexNet and consists of:
 
-The project also compares:
+- 5 convolutional layers
+- ReLU activations
+- Max pooling layers
+- Dropout regularization
+- 3 fully connected layers
+- Softmax output layer (inference only)
 
-- Standard Cross Entropy (Baseline)
+**Input specification**
+- Format: RGB
+- Resolution: 227 × 227
+
+**Training configuration**
+- Loss function: Cross Entropy Loss
+- Optimizer: SGD
+- Learning rate: 0.01
+- Momentum: 0.9
+- Weight decay: 0.0005
+
+---
+
+## Dataset
+
+**FER2013**
+
+Classes:
+- Angry
+- Disgust
+- Fear
+- Happy
+- Neutral
+- Sad
+- Surprise
+
+---
+
+## Results
+
+| Metric              | Value  |
+|----------------------|-------:|
+| Top-1 Accuracy       | 62.76% |
+| Top-2 Accuracy       | 80.64% |
+| Weighted F1 Score    | 0.62   |
+| ROC AUC              | 0.90   |
+
+Two training strategies were compared:
+
+- Standard Cross Entropy (baseline)
 - Weighted Cross Entropy
 
-Weighted Cross Entropy improved minority-class recognition (especially **Disgust** and **Fear**) but reduced the overall accuracy.
+The weighted cross-entropy approach improved recognition of minority classes — particularly Disgust and Fear — at the cost of a slight reduction in overall accuracy.
 
 ---
 
-## 💻 Web Interface
+## Web Interface
 
-The application provides a simple browser interface where users can:
+The application provides a browser-based interface where users can:
 
-- Start webcam detection
-- Detect emotions in real time
-- View the predicted emotion above the detected face
-- Stop the webcam
+- Start webcam-based detection
+- View real-time emotion predictions
+- See the predicted emotion label displayed above the detected face
+- Stop the webcam session
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
-```text
+```
 categorical-interface/
 │
 ├── static/
@@ -137,65 +129,54 @@ categorical-interface/
 
 ---
 
-## 🚀 Installation
+## Installation
 
-Clone the repository
+1. Clone the repository
+   ```bash
+   git clone https://github.com/<your-username>/<repository-name>.git
+   ```
 
-```bash
-git clone https://github.com/<your-username>/<repository-name>.git
-```
+2. Move into the project directory
+   ```bash
+   cd <repository-name>
+   ```
 
-Move into the project
+3. Create a virtual environment
+   ```bash
+   python -m venv .venv
+   ```
 
-```bash
-cd <repository-name>
-```
+4. Activate the virtual environment (Windows)
+   ```bash
+   .venv\Scripts\activate
+   ```
 
-Create a virtual environment
-
-```bash
-python -m venv .venv
-```
-
-Activate the virtual environment
-
-Windows
-
-```bash
-.venv\Scripts\activate
-```
-
-Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
+5. Install dependencies
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 ---
 
-## ▶️ Running the Application
+## Running the Application
 
-Start the Flask application
-
+Start the Flask application:
 ```bash
 python app.py
 ```
 
-Open your browser and visit
-
+Open a browser and navigate to:
 ```
 http://127.0.0.1:5000
 ```
 
-Click **Detect My Emotion** to start real-time emotion recognition.
+Click **Detect My Emotion** to begin real-time emotion recognition.
 
 ---
 
-## ⚠️ Model File
+## Model File
 
-The trained model (`best_model.pth`) is **not included** in this repository because it exceeds GitHub's file size limit.
-
-Place the trained model in the project root before running the application.
+The trained model (`best_model.pth`) is not included in this repository, as it exceeds GitHub's file size limit. Place the trained model file in the project root directory before running the application:
 
 ```
 best_model.pth
@@ -203,19 +184,19 @@ best_model.pth
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
-- Focal Loss
-- ResNet-50 / EfficientNet
-- Transfer Learning
-- Face Alignment using MTCNN
-- Support for AffectNet and RAF-DB
-- Improved browser UI
-- Mobile compatibility
+- Incorporate Focal Loss
+- Explore ResNet-50 / EfficientNet architectures
+- Apply transfer learning
+- Add face alignment using MTCNN
+- Extend support to AffectNet and RAF-DB datasets
+- Improve browser UI
+- Add mobile compatibility
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - Python
 - PyTorch
@@ -226,15 +207,12 @@ best_model.pth
 
 ---
 
-## 👩‍💻 Author
+## Author
 
 **Sowmya Sri**
-
-B.Tech, Electronics and Communication Engineering  
+B.Tech, Electronics and Communication Engineering
 Indian Institute of Technology Guwahati
 
 ---
 
-## ⭐ If you found this project useful
-
-Please consider giving the repository a **Star ⭐**.
+If you find this project useful, please consider starring the repository.
