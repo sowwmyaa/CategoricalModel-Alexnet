@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facial Emotion Recognition</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Facial Emotion Recognition</h1>
+
+        <p>
+            Detect your facial emotion using your webcam.
+        </p>
+
+        <button id="startBtn">
+            Detect My Emotion
+        </button>
+
+        <button id="stopBtn" style="display:none;">
+            Stop Camera
+        </button>
+
+        <div class="video-container">
+
+            <img id="videoFeed" src="" alt="Webcam Feed">
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
