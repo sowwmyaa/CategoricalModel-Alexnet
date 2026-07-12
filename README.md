@@ -78,7 +78,7 @@ Two training strategies were compared:
 - Standard Cross Entropy (baseline)
 - Weighted Cross Entropy
 
-The weighted cross-entropy approach improved recognition of minority classes — particularly Disgust and Fear — at the cost of a slight reduction in overall accuracy.
+The weighted cross-entropy approach improved recognition of minority classes - particularly Disgust and Fear - at the cost of a slight reduction in overall accuracy.
 
 ### Web Interface
 
