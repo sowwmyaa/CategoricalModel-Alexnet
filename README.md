@@ -1,16 +1,16 @@
-### Facial Emotion Recognition using AlexNet
+## Facial Emotion Recognition using AlexNet
 
 A real-time facial emotion recognition web application built using PyTorch, Flask, and OpenCV. The system uses an AlexNet-based convolutional neural network trained on the FER2013 dataset to classify facial expressions into seven emotion categories.
 
-#### Overview
+### Overview
 
 This project implements a facial emotion classification pipeline from scratch, covering model architecture, training, and deployment through a browser-based interface. It supports real-time webcam-based detection with bounding-box face localization and confidence-scored predictions.
 
-#### Project Resources
+### Project Resources
 
 - Project Presentation: see local project file named *AffectNet Paper – Categorical Model-Final*
 
-#### Features
+### Features
 
 - Real-time webcam emotion detection
 - Classification across seven facial emotion categories
@@ -19,7 +19,7 @@ This project implements a facial emotion classification pipeline from scratch, c
 - Confidence score displayed alongside predicted emotion
 - Face detection with bounding-box overlay
 
-#### Supported Emotions
+### Supported Emotions
 
 - Angry
 - Disgust
@@ -29,7 +29,7 @@ This project implements a facial emotion classification pipeline from scratch, c
 - Sad
 - Surprise
 
-#### Model Architecture
+### Model Architecture
 
 The model is based on AlexNet and consists of:
 
@@ -51,7 +51,7 @@ The model is based on AlexNet and consists of:
 - Momentum: 0.9
 - Weight decay: 0.0005
 
-#### Dataset
+### Dataset
 
 **FER2013**
 
@@ -64,7 +64,7 @@ Classes:
 - Sad
 - Surprise
 
-#### Results
+### Results
 
 | Metric              | Value  |
 |----------------------|-------:|
@@ -80,7 +80,7 @@ Two training strategies were compared:
 
 The weighted cross-entropy approach improved recognition of minority classes — particularly Disgust and Fear — at the cost of a slight reduction in overall accuracy.
 
-#### Web Interface
+### Web Interface
 
 The application provides a browser-based interface where users can:
 
@@ -89,7 +89,7 @@ The application provides a browser-based interface where users can:
 - See the predicted emotion label displayed above the detected face
 - Stop the webcam session
 
-#### Project Structure
+### Project Structure
 
 ```
 categorical-interface/
@@ -109,7 +109,7 @@ categorical-interface/
 └── README.md
 ```
 
-#### Installation
+### Installation
 
 1. Clone the repository
    ```bash
@@ -136,7 +136,7 @@ categorical-interface/
    pip install -r requirements.txt
    ```
 
-#### Running the Application
+### Running the Application
 
 Start the Flask application:
 ```bash
@@ -150,7 +150,7 @@ http://127.0.0.1:5000
 
 Click **Detect My Emotion** to begin real-time emotion recognition.
 
-#### Model File
+### Model File
 
 The trained model (`best_model.pth`) is not included in this repository, as it exceeds GitHub's file size limit. Place the trained model file in the project root directory before running the application:
 
@@ -158,7 +158,7 @@ The trained model (`best_model.pth`) is not included in this repository, as it e
 best_model.pth
 ```
 
-#### Future Improvements
+### Future Improvements
 
 - Incorporate Focal Loss
 - Explore ResNet-50 / EfficientNet architectures
@@ -168,7 +168,7 @@ best_model.pth
 - Improve browser UI
 - Add mobile compatibility
 
-#### Technologies Used
+### Technologies Used
 
 - Python
 - PyTorch
@@ -177,7 +177,7 @@ best_model.pth
 - Pillow
 - NumPy
 
-#### Author
+### Author
 
 **Sowmya Sri**
 B.Tech, Electronics and Communication Engineering
