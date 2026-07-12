@@ -11,6 +11,10 @@ A real-time **Facial Emotion Recognition** web application built using **PyTorch
 
 ---
 
+## 📄 Project Resources
+
+- 📑 **Project Presentation:** [View Presentation](file:///C:/Users/Sowmya/Desktop/AffectNet%20Paper-Categorical%20model.pdf)
+
 ## 📌 Features
 
 - 🎥 Real-time webcam emotion detection
